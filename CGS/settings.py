@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_spectacular',
     'certificates',
 ]
 
@@ -139,6 +140,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',  # Отправка данных в JSON-формате
         'rest_framework.renderers.BrowsableAPIRenderer',  # Включает удобный интерфейс в браузере
@@ -146,4 +148,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',  # Разрешить доступ для всех (по умолчанию)
     ],
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Ваше API',
+    'DESCRIPTION': 'Документация к вашему API',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
 }
