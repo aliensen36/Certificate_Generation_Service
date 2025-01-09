@@ -114,7 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-# LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'ru'
 LANGUAGES = [
     ('ru', 'Russian'),
@@ -151,8 +150,8 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Ваше API',
-    'DESCRIPTION': 'Документация к вашему API',
+    'TITLE': 'Сервис генерации сертификатов',
+    'DESCRIPTION': 'Документация сервиса генерации сертификатов',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
 }

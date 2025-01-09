@@ -1,24 +1,29 @@
 from django.contrib import admin
-from .models import Certificate, Skill, CertificateSkill
+from .models import *
 
-# Регистрируем модель Certificate
+
+class OwnerAdmin(admin.ModelAdmin):
+    list_display = ('name', 'last_name', 'email')
+    search_fields = ('name', 'last_name', 'email')
+
+
 class CertificateAdmin(admin.ModelAdmin):
-    list_display = ('certificate_number', 'owner_name', 'owner_email', 'date_issued', 'expiration_date', 'course_name', 'instructor_name', 'organization_name')
-    search_fields = ('certificate_number', 'owner_name', 'owner_email')
-    list_filter = ('date_issued', 'expiration_date')
+    list_display = ('id', 'number', 'owner', 'role', 'date_issued', 'course_name', 'organization_name',
+                    'internship_start_date', 'internship_end_date')
+    search_fields = ('number', 'owner',)
+    list_filter = ('date_issued',)
 
-# Регистрируем модель Skill
 class SkillAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
 
-# Регистрируем модель CertificateSkill
 class CertificateSkillAdmin(admin.ModelAdmin):
     list_display = ('certificate', 'skill')
-    search_fields = ('certificate__certificate_number', 'skill__name')
+    search_fields = ('certificate__number', 'skill__name')
     list_filter = ('certificate', 'skill')
 
-# Регистрация моделей в админке
+
+admin.site.register(Owner, OwnerAdmin)
 admin.site.register(Certificate, CertificateAdmin)
 admin.site.register(Skill, SkillAdmin)
 admin.site.register(CertificateSkill, CertificateSkillAdmin)
