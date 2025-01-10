@@ -151,6 +151,23 @@
 },
 {
     "model": "certificates.certificate",
+    "pk": "074923e1-a275-424b-9dcd-f3c7846b6c71",
+    "fields": {
+        "number": "002",
+        "owner": "4a14a388-0acd-48ba-a52e-c640eee92f75",
+        "role": 5,
+        "date_issued": "2025-01-10",
+        "course_name": "Разработка сайта (сервера)",
+        "internship_start_date": "2024-01-10",
+        "internship_end_date": "2025-01-10",
+        "skills": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "certificates.certificate",
     "pk": "da812be8-a6c5-4640-b128-d4d73a55f44a",
     "fields": {
         "number": "001",
