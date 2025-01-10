@@ -102,5 +102,67 @@
     "fields": {
         "name": "QA Engineer"
     }
+},
+{
+    "model": "certificates.skillcategory",
+    "pk": 1,
+    "fields": {
+        "name": "Data Science"
+    }
+},
+{
+    "model": "certificates.skillcategory",
+    "pk": 2,
+    "fields": {
+        "name": "Web Development"
+    }
+},
+{
+    "model": "certificates.skill",
+    "pk": 1,
+    "fields": {
+        "name": "PyCaret",
+        "category": 1
+    }
+},
+{
+    "model": "certificates.skill",
+    "pk": 2,
+    "fields": {
+        "name": "Random Forest",
+        "category": 1
+    }
+},
+{
+    "model": "certificates.skill",
+    "pk": 3,
+    "fields": {
+        "name": "Django",
+        "category": 2
+    }
+},
+{
+    "model": "certificates.skill",
+    "pk": 4,
+    "fields": {
+        "name": "React",
+        "category": 2
+    }
+},
+{
+    "model": "certificates.certificate",
+    "pk": "da812be8-a6c5-4640-b128-d4d73a55f44a",
+    "fields": {
+        "number": "001",
+        "owner": "130a8cc9-0196-4b1b-8c88-13485a5c419e",
+        "role": 1,
+        "date_issued": "2025-01-10",
+        "course_name": "Разработка сайта",
+        "internship_start_date": "2024-01-10",
+        "internship_end_date": "2025-01-10",
+        "skills": [
+            3
+        ]
+    }
 }
 ]
