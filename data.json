@@ -1,0 +1,106 @@
+[
+{
+    "model": "certificates.owner",
+    "pk": "130a8cc9-0196-4b1b-8c88-13485a5c419e",
+    "fields": {
+        "name": "Никита",
+        "last_name": "Петров",
+        "email": "mail2@mail.ru"
+    }
+},
+{
+    "model": "certificates.owner",
+    "pk": "4a14a388-0acd-48ba-a52e-c640eee92f75",
+    "fields": {
+        "name": "Иван",
+        "last_name": "Иванов",
+        "email": "mail@mail.ru"
+    }
+},
+{
+    "model": "certificates.owner",
+    "pk": "f0713872-9e55-4329-8a20-00695fe2d42a",
+    "fields": {
+        "name": "Петр",
+        "last_name": "Петров",
+        "email": "mail1@mail.ru"
+    }
+},
+{
+    "model": "certificates.role",
+    "pk": 1,
+    "fields": {
+        "name": "Data Scientist"
+    }
+},
+{
+    "model": "certificates.role",
+    "pk": 2,
+    "fields": {
+        "name": "Python Developer"
+    }
+},
+{
+    "model": "certificates.role",
+    "pk": 3,
+    "fields": {
+        "name": "Web Developer"
+    }
+},
+{
+    "model": "certificates.role",
+    "pk": 4,
+    "fields": {
+        "name": "Frontend Developer"
+    }
+},
+{
+    "model": "certificates.role",
+    "pk": 5,
+    "fields": {
+        "name": "Backend Developer"
+    }
+},
+{
+    "model": "certificates.role",
+    "pk": 6,
+    "fields": {
+        "name": "Full Stack Developer"
+    }
+},
+{
+    "model": "certificates.role",
+    "pk": 7,
+    "fields": {
+        "name": "DevOps Engineer"
+    }
+},
+{
+    "model": "certificates.role",
+    "pk": 8,
+    "fields": {
+        "name": "Software Engineer"
+    }
+},
+{
+    "model": "certificates.role",
+    "pk": 9,
+    "fields": {
+        "name": "Cloud Engineer"
+    }
+},
+{
+    "model": "certificates.role",
+    "pk": 10,
+    "fields": {
+        "name": "Machine Learning Engineer"
+    }
+},
+{
+    "model": "certificates.role",
+    "pk": 11,
+    "fields": {
+        "name": "QA Engineer"
+    }
+}
+]
