@@ -68,5 +68,5 @@ docker-compose exec web python manage.py createsuperuser
 
 ## Загрузить данные в БД из файла data.json
 ```bash
-docker-compose exec web python manage.py loaddata data.json
+docker-compose exec web python manage.py loaddata /usr/src/app/CGS/data/data.json
 ```
