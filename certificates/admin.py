@@ -8,7 +8,7 @@ class OwnerAdmin(admin.ModelAdmin):
 
 
 class CertificateAdmin(admin.ModelAdmin):
-    list_display = ('id', 'number', 'owner', 'role', 'date_issued', 'course_name', 'organization_name',
+    list_display = ('id', 'number', 'owner', 'role', 'date_issued', 'course_name',
                     'internship_start_date', 'internship_end_date')
     search_fields = ('number', 'owner',)
     list_filter = ('date_issued',)

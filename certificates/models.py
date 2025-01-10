@@ -40,7 +40,6 @@ class Certificate(models.Model):
     role = models.CharField(max_length=50, choices=ROLE_CHOICES, blank=True, null=True, verbose_name='Роль')
     date_issued = models.DateField(verbose_name='Дата выдачи сертификата')
     course_name = models.CharField(max_length=150, verbose_name='Название курса')
-    organization_name = models.CharField(max_length=150)  # Организация, выдавшая сертификат
     internship_start_date = models.DateField(null=True, blank=True, verbose_name="Дата начала стажировки")
     internship_end_date = models.DateField(null=True, blank=True, verbose_name="Дата окончания стажировки")
 
