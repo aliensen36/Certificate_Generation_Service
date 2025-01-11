@@ -6,6 +6,8 @@ DELETE /api/certificates/<id>/ — удаление сертификата.
 
 # Сервис генерации сертификатов
 
+
+
 ## Docker desktop
 Скачать и установить:
 [https://www.docker.com/products/docker-desktop/](URL)
