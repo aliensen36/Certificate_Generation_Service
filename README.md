@@ -81,8 +81,11 @@ python manage.py makemigrations
 docker-compose exec web python manage.py createsuperuser
 ```
 
-
 ### Загрузить данные в БД из файла data.json
 ```bash
 docker-compose exec web python manage.py loaddata /usr/src/app/CGS/data/data.json
 ```
+
+### Запуск сервера
+Докер запускает сервер.
+API доступны по адресу: http://127.0.0.1:8000/api/.
