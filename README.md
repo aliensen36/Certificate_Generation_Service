@@ -14,6 +14,16 @@ DELETE /api/certificates/<id>/ — удаление сертификата.
 - PostgreSQL
 - Git
 
+## Установка и настройка
+
+### Клонирование репозитория
+
+Для начала клонируйте репозиторий на свою локальную машину:
+
+```bash
+git clone https://github.com/aliensen36/Certificate_Generation_Service.git
+```
+
 ## Docker desktop
 Скачать и установить:
 [https://www.docker.com/products/docker-desktop/](URL)
