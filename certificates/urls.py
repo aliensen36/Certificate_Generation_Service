@@ -9,6 +9,9 @@ router.register('roles', RoleViewSet)
 router.register('skill-categories', SkillCategoryViewSet)
 router.register('skills', SkillViewSet)
 router.register(r'certificates', CertificateViewSet, basename='certificate')
+router.register(r'criteria', CriterionViewSet, basename='criterion')
+router.register(r'scores', ScoreViewSet, basename='score')
+
 
 urlpatterns = [
     path('', include(router.urls)),

@@ -39,15 +39,37 @@ class SkillCategorySerializer(serializers.ModelSerializer):
         fields = ['id', 'name']
 
 
+
+
+# Сериализатор для модели Criterion
+class CriterionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Criterion
+        fields = ['id', 'name']
+
+
+# Сериализатор для модели Score
+class ScoreSerializer(serializers.ModelSerializer):
+    criterion = CriterionSerializer()
+    certificate_number = serializers.CharField(source='certificate.number', read_only=True)
+    owner_name = serializers.CharField(source='owner.name', read_only=True)
+
+    class Meta:
+        model = Score
+        fields = ['id', 'owner_name', 'certificate_number', 'criterion', 'score']
+
+
+
 # Сериализатор для модели сертификата
 class CertificateSerializer(serializers.ModelSerializer):
     owner = OwnerSerializer(read_only=True)  # Полная информация о владельце
     role = serializers.CharField(source='role.name', read_only=True)  # Человекочитаемая роль
     skills = SkillSerializer(many=True, read_only=True)  # Человекочитаемые навыки
+    scores = ScoreSerializer(many=True, read_only=True)
 
     class Meta:
         model = Certificate
         fields = [
             'id', 'number', 'date_issued', 'course_name', 'internship_start_date', 'internship_end_date',
-            'owner', 'role', 'skills'
+            'owner', 'role', 'skills', 'scores'
         ]

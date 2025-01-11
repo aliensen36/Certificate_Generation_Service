@@ -79,3 +79,30 @@ class Certificate(models.Model):
     class Meta:
         verbose_name = 'Сертификат'
         verbose_name_plural = 'Сертификаты'
+
+
+# Модель для критериев оценки
+class Criterion(models.Model):
+    name = models.CharField(max_length=100, unique=True, verbose_name="Критерий оценки")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Критерий оценки"
+        verbose_name_plural = "Критерии оценок"
+
+# Модель для хранения баллов по критериям
+class Score(models.Model):
+    owner = models.ForeignKey(Owner, on_delete=models.CASCADE, related_name='scores', verbose_name="Владелец")
+    certificate = models.ForeignKey(Certificate, on_delete=models.CASCADE, related_name='scores', verbose_name="Сертификат")
+    criterion = models.ForeignKey(Criterion, on_delete=models.CASCADE, related_name='scores', verbose_name="Критерий")
+    score = models.FloatField(verbose_name="Баллы")
+
+    def __str__(self):
+        return f"{self.criterion.name}: {self.score} ({self.owner.name} {self.owner.last_name})"
+
+    class Meta:
+        verbose_name = "Балл"
+        verbose_name_plural = "Баллы"
+        unique_together = ('owner', 'certificate', 'criterion')

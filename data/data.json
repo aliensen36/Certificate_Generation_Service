@@ -181,5 +181,39 @@
             3
         ]
     }
+},
+{
+    "model": "certificates.criterion",
+    "pk": 1,
+    "fields": {
+        "name": "Программирование"
+    }
+},
+{
+    "model": "certificates.criterion",
+    "pk": 2,
+    "fields": {
+        "name": "Коммуникации"
+    }
+},
+{
+    "model": "certificates.score",
+    "pk": 1,
+    "fields": {
+        "owner": "130a8cc9-0196-4b1b-8c88-13485a5c419e",
+        "certificate": "da812be8-a6c5-4640-b128-d4d73a55f44a",
+        "criterion": 1,
+        "score": 4.5
+    }
+},
+{
+    "model": "certificates.score",
+    "pk": 2,
+    "fields": {
+        "owner": "130a8cc9-0196-4b1b-8c88-13485a5c419e",
+        "certificate": "da812be8-a6c5-4640-b128-d4d73a55f44a",
+        "criterion": 2,
+        "score": 5.6
+    }
 }
 ]
