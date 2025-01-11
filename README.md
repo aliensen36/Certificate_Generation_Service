@@ -68,6 +68,7 @@ docker-compose down
 ```bash
 pip freeze > requirements.txt
 ```
+В корень проекта добавить файл .env со своими данными на основе файла .env.example.
 
 ### Создать миграции
 ```bash
