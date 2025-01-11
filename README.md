@@ -39,6 +39,12 @@ venv\Scripts\activate
 В итоге в терминале появится префикс `(venv)`, например:
 `(venv) PS C:\Users\user\PycharmProjects\CGS>`
 
+### Создать миграции
+```bash
+python manage.py makemigrations
+```
+Миграции применятся при пересборке контейнеров.
+
 ### Создание и запуск контейнеров
 ```bash
 docker-compose up
@@ -64,11 +70,6 @@ pip freeze > requirements.txt
 ```
 В корень проекта добавить файл .env со своими данными на основе файла .env.example.
 
-### Создать миграции
-```bash
-python manage.py makemigrations
-```
-Миграции применятся при пересборке контейнеров.
 
 ### Создать суперпользователя
 ```bash
@@ -83,6 +84,10 @@ docker-compose exec web python manage.py loaddata /usr/src/app/CGS/data/data.jso
 ### Запуск сервера
 Докер запускает сервер.
 API доступны по адресу: http://127.0.0.1:8000/api/.
+
+### Административная панель
+http://127.0.0.1:8000/admin/.
+Вход с логином и паролем суперпользователя.
 
 
 ## Структура проекта
