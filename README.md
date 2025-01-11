@@ -8,6 +8,12 @@ DELETE /api/certificates/<id>/ — удаление сертификата.
 
 С помощью этого API можно генерировать сертификаты о прохождении курсов (стажировок) для участников.
 
+## Использованные технологии
+
+- Django REST Framework
+- PostgreSQL
+- Git
+
 ## Docker desktop
 Скачать и установить:
 [https://www.docker.com/products/docker-desktop/](URL)
