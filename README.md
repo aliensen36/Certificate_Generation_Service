@@ -6,6 +6,7 @@
 
 - Django REST Framework
 - PostgreSQL
+- Docker
 - Git
 
 ## Установка и настройка
@@ -103,40 +104,53 @@ http://127.0.0.1:8000/admin/.
 ## Эндпойнты API
 
 Владелец сертификата  
-GET /api/owners/ — Список владельцев  
-POST /api/owners/ — Создание нового владельца  
-GET /api/owners/{id}/ — Получение информации о владельце  
-PUT /api/owners/{id}/ — Обновление информации о владельце  
-DELETE /api/owners/{id}/ — Удаление владельца  
+GET http://127.0.0.1:8000/api/owners/ — Список владельцев  
+POST http://127.0.0.1:8000/api/owners/   — Создание нового владельца  
+GET http://127.0.0.1:8000/api/owners/{id}/   — Получение информации о владельце  
+PUT http://127.0.0.1:8000/api/owners/{id}/    — Обновление информации о владельце  
+DELETE http://127.0.0.1:8000/api/owners/{id}/    — Удаление владельца  
 
 Роли  
-GET /api/roles/ — Список ролей  
-POST /api/roles/ — Создание новой роли  
-GET /api/roles/{id}/ — Получение информации о роли  
-PUT /api/roles/{id}/ — Обновление информации о роли  
-DELETE /api/roles/{id}/ — Удаление роли  
+GET http://127.0.0.1:8000/api/roles/ — Список ролей  
+POST http://127.0.0.1:8000/api/roles/ — Создание новой роли  
+GET http://127.0.0.1:8000/api/roles/{id}/ — Получение информации о роли  
+PUT http://127.0.0.1:8000/api/roles/{id}/ — Обновление информации о роли  
+DELETE http://127.0.0.1:8000/api/roles/{id}/ — Удаление роли  
 
 Категории навыков  
-GET /api/skill-categories/ — Список категорий навыков  
-POST /api/skill-categories/ — Создание новой категории  
-GET /api/skill-categories/{id}/ — Получение информации о категории  
-PUT /api/skill-categories/{id}/ — Обновление информации о категории  
-DELETE /api/skill-categories/{id}/ — Удаление категории  
+GET http://127.0.0.1:8000/api/skill-categories/ — Список категорий навыков  
+POST http://127.0.0.1:8000/api/skill-categories/ — Создание новой категории  
+GET http://127.0.0.1:8000/api/skill-categories/{id}/ — Получение информации о категории  
+PUT http://127.0.0.1:8000/api/skill-categories/{id}/ — Обновление информации о категории  
+DELETE http://127.0.0.1:8000/api/skill-categories/{id}/ — Удаление категории  
 
 Навыки  
-GET /api/skills/ — Список навыков  
-POST /api/skills/ — Создание нового навыка  
-GET /api/skills/{id}/ — Получение информации о навыке  
-PUT /api/skills/{id}/ — Обновление информации о навыке  
-DELETE /api/skills/{id}/ — Удаление навыка  
+GET http://127.0.0.1:8000/api/skills/ — Список навыков  
+POST http://127.0.0.1:8000/api/skills/ — Создание нового навыка  
+GET http://127.0.0.1:8000/api/skills/{id}/ — Получение информации о навыке  
+PUT http://127.0.0.1:8000/api/skills/{id}/ — Обновление информации о навыке  
+DELETE http://127.0.0.1:8000/api/skills/{id}/ — Удаление навыка  
 
 Сертификаты  
-GET /api/certificates/ — Список сертификатов  
-POST /api/certificates/ — Создание нового сертификата  
-GET /api/certificates/{id}/ — Получение информации о сертификате  
-PUT /api/certificates/{id}/ — Обновление информации о сертификате  
-DELETE /api/certificates/{id}/ — Удаление сертификата  
+GET http://127.0.0.1:8000/api/certificates/ — Список сертификатов  
+POST http://127.0.0.1:8000/api/certificates/ — Создание нового сертификата  
+GET http://127.0.0.1:8000/api/certificates/{id}/ — Получение информации о сертификате  
+PUT http://127.0.0.1:8000/api/certificates/{id}/ — Обновление информации о сертификате  
+DELETE http://127.0.0.1:8000/api/certificates/{id}/ — Удаление сертификата  
 
+Критерии оценивания навыков владельца  
+GET http://127.0.0.1:8000/api/criteria/ — Список критериев  
+POST http://127.0.0.1:8000/api/criteria/ — Создание нового критерия  
+GET http://127.0.0.1:8000/api/criteria/{id}/ — Получение информации о критерии  
+PUT http://127.0.0.1:8000/api/criteria/{id}/ — Обновление информации о критерии  
+DELETE http://127.0.0.1:8000/api/criteria/{id}/ — Удаление критерия  
+
+Баллы владельца  
+GET http://127.0.0.1:8000/api/scores/ — Список баллов  
+POST http://127.0.0.1:8000/api/scores/ — Указание баллов  
+GET http://127.0.0.1:8000/api/scores/{id}/ — Получение информации о баллах  
+PUT http://127.0.0.1:8000/api/scores/{id}/ — Обновление информации о баллах  
+DELETE http://127.0.0.1:8000/api/scores/{id}/ — Удаление баллов  
 
 
 # Документация
