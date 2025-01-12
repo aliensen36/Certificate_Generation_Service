@@ -1,3 +1,4 @@
+from django.db.models import Q
 from rest_framework.viewsets import ModelViewSet
 from .models import *
 from .serializers import *
@@ -34,6 +35,19 @@ class ScoreViewSet(ModelViewSet):
 
 
 class CertificateViewSet(ModelViewSet):
-    queryset = Certificate.objects.select_related('owner', 'role') \
-                                   .prefetch_related('skills', 'scores__criterion')
+    queryset = Certificate.objects.select_related('owner', 'role')  # Загружаем связанные owner и role с помощью select_related
     serializer_class = CertificateSerializer
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        query = self.request.query_params.get('query', None)  # Получаем параметр 'query' из запроса
+
+        if query:
+            # Фильтрация по номеру сертификата или email владельца
+            queryset = queryset.filter(
+                Q(number__icontains=query) | Q(owner__email__icontains=query)
+            )
+
+        queryset = queryset.prefetch_related('skills')  # Предзагрузка только для 'skills'
+
+        return queryset

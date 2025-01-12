@@ -10,16 +10,20 @@ class OwnerAdmin(admin.ModelAdmin):
 
 
 class CertificateAdmin(admin.ModelAdmin):
-    list_display = ('number', 'owner', 'role', 'date_issued', 'course_name',
-                    'internship_start_date', 'internship_end_date')
-    search_fields = ('number', 'owner',)
-    list_filter = ('date_issued',)
+    list_display = ('number', 'owner', 'date_issued')
+    search_fields = ('number', 'owner__email')
+    list_filter = ('number', 'owner__email', 'date_issued',)
     list_display_links = ('number', 'owner')
     readonly_fields = ('scores_display',)
     filter_horizontal = ('skills',)
     formfield_overrides = {
         models.ManyToManyField: {'widget': FilteredSelectMultiple('Навыки', is_stacked=False)},
     }
+
+    # Поиск по номеру сертификата или email владельца
+    def get_search_results(self, request, queryset, search_term):
+        queryset, use_distinct = super().get_search_results(request, queryset, search_term)
+        return queryset, use_distinct
 
     def scores_display(self, obj):
         # Все баллы владельца сертификата
@@ -55,9 +59,9 @@ class CriterionAdmin(admin.ModelAdmin):
 
 
 class ScoreAdmin(admin.ModelAdmin):
-    list_display = ('owner', 'certificate', 'criterion', 'score')
-    search_fields = ('owner__name', 'owner__last_name', 'certificate__number', 'criterion__name')
-    list_filter = ('criterion',)
+    list_display = ('owner', 'criterion', 'score')
+    search_fields = ('owner__name', 'owner__last_name', 'criterion__name')
+    list_filter = ('owner__name', 'owner__last_name', 'criterion__name')
 
 
 admin.site.register(Owner, OwnerAdmin)

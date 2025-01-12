@@ -66,10 +66,15 @@ class CertificateSerializer(serializers.ModelSerializer):
     role = serializers.CharField(source='role.name', read_only=True)  # Человекочитаемая роль
     skills = SkillSerializer(many=True, read_only=True)  # Человекочитаемые навыки
     scores = ScoreSerializer(many=True, read_only=True)
+    owner_scores = serializers.SerializerMethodField()  # Добавляем поле для баллов владельца
+
+    def get_owner_scores(self, obj):
+        # Баллы владельца, если они подгружены
+        return [score.score for score in obj.owner.scores.all()]
 
     class Meta:
         model = Certificate
         fields = [
             'id', 'number', 'date_issued', 'course_name', 'internship_start_date', 'internship_end_date',
-            'owner', 'role', 'skills', 'scores'
+            'owner', 'role', 'skills', 'scores', 'owner_scores'
         ]

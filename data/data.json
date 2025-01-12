@@ -4,7 +4,7 @@
     "pk": "130a8cc9-0196-4b1b-8c88-13485a5c419e",
     "fields": {
         "name": "Никита",
-        "last_name": "Петров",
+        "last_name": "Семенов",
         "email": "mail2@mail.ru"
     }
 },
@@ -153,7 +153,7 @@
     "model": "certificates.certificate",
     "pk": "074923e1-a275-424b-9dcd-f3c7846b6c71",
     "fields": {
-        "number": "002",
+        "number": "dsh38fgn",
         "owner": "4a14a388-0acd-48ba-a52e-c640eee92f75",
         "role": 5,
         "date_issued": "2025-01-10",
@@ -168,9 +168,53 @@
 },
 {
     "model": "certificates.certificate",
+    "pk": "62dfa381-0315-41dc-95cd-d8a5bd8f6155",
+    "fields": {
+        "number": "b7767geg",
+        "owner": "f0713872-9e55-4329-8a20-00695fe2d42a",
+        "role": 11,
+        "date_issued": "2025-01-12",
+        "course_name": "Тестирование сайта",
+        "internship_start_date": null,
+        "internship_end_date": null,
+        "skills": []
+    }
+},
+{
+    "model": "certificates.certificate",
+    "pk": "bd694be9-bae6-4a0f-b6e5-7af07f5a47a3",
+    "fields": {
+        "number": "fig3bb0k",
+        "owner": "f0713872-9e55-4329-8a20-00695fe2d42a",
+        "role": 4,
+        "date_issued": "2025-01-12",
+        "course_name": "Разработка лендинга",
+        "internship_start_date": "2024-01-12",
+        "internship_end_date": "2025-01-12",
+        "skills": [
+            4
+        ]
+    }
+},
+{
+    "model": "certificates.certificate",
+    "pk": "c729a408-e7fb-4337-8528-e42663ca2024",
+    "fields": {
+        "number": "qc2sj56k",
+        "owner": "4a14a388-0acd-48ba-a52e-c640eee92f75",
+        "role": null,
+        "date_issued": "2025-01-12",
+        "course_name": "Разработка лендинга",
+        "internship_start_date": null,
+        "internship_end_date": null,
+        "skills": []
+    }
+},
+{
+    "model": "certificates.certificate",
     "pk": "da812be8-a6c5-4640-b128-d4d73a55f44a",
     "fields": {
-        "number": "001",
+        "number": "98snf65b",
         "owner": "130a8cc9-0196-4b1b-8c88-13485a5c419e",
         "role": 1,
         "date_issued": "2025-01-10",
@@ -215,7 +259,6 @@
     "pk": 1,
     "fields": {
         "owner": "130a8cc9-0196-4b1b-8c88-13485a5c419e",
-        "certificate": "da812be8-a6c5-4640-b128-d4d73a55f44a",
         "criterion": 1,
         "score": 4.5
     }
@@ -225,7 +268,6 @@
     "pk": 2,
     "fields": {
         "owner": "130a8cc9-0196-4b1b-8c88-13485a5c419e",
-        "certificate": "da812be8-a6c5-4640-b128-d4d73a55f44a",
         "criterion": 2,
         "score": 5.6
     }
@@ -235,9 +277,17 @@
     "pk": 8,
     "fields": {
         "owner": "130a8cc9-0196-4b1b-8c88-13485a5c419e",
-        "certificate": "da812be8-a6c5-4640-b128-d4d73a55f44a",
         "criterion": 3,
         "score": 8.0
+    }
+},
+{
+    "model": "certificates.score",
+    "pk": 10,
+    "fields": {
+        "owner": "4a14a388-0acd-48ba-a52e-c640eee92f75",
+        "criterion": 1,
+        "score": 9.2
     }
 }
 ]
