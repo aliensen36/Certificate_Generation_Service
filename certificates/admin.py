@@ -1,22 +1,7 @@
 from django.contrib import admin
 from .models import *
+from django.utils.html import format_html
 from django.contrib.admin.widgets import FilteredSelectMultiple
-
-
-class ScoreInline(admin.TabularInline):
-    model = Score
-    extra = 1  # Количество пустых строк для добавления новых записей
-    fields = ('criterion', 'score',)
-    autocomplete_fields = ('criterion', 'owner')  # Упрощение поиска
-    readonly_fields = ('owner',)  # Владелец отображается, но не редактируется
-
-    def save_model(self, request, obj, form, change):
-        """
-        Автоматически назначает владельца сертификата владельцем для каждого балла.
-        """
-        obj.owner = obj.certificate.owner
-        super().save_model(request, obj, form, change)
-
 
 
 class OwnerAdmin(admin.ModelAdmin):
@@ -30,11 +15,20 @@ class CertificateAdmin(admin.ModelAdmin):
     search_fields = ('number', 'owner',)
     list_filter = ('date_issued',)
     list_display_links = ('number', 'owner')
+    readonly_fields = ('scores_display',)
     filter_horizontal = ('skills',)
     formfield_overrides = {
         models.ManyToManyField: {'widget': FilteredSelectMultiple('Навыки', is_stacked=False)},
     }
-    inlines = [ScoreInline]
+
+    def scores_display(self, obj):
+        # Все баллы владельца сертификата
+        scores = obj.scores.all()
+        if not scores:
+            return "Нет баллов"
+        return format_html("<br>".join([f"{score.criterion}: {score.score}" for score in scores]))
+
+    scores_display.short_description = 'Баллы владельца'
 
 
 class SkillAdmin(admin.ModelAdmin):
@@ -46,6 +40,7 @@ class SkillCategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
     list_filter = ('name',)
+
 
 class RoleAdmin(admin.ModelAdmin):
     list_display = ('name',)

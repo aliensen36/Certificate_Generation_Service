@@ -76,6 +76,11 @@ class Certificate(models.Model):
     def __str__(self):
         return f"Certificate {self.number} - {self.owner}"
 
+    @property
+    def scores(self):
+        # Возвращаем все баллы для владельца сертификата
+        return self.score_set.all()
+
     class Meta:
         verbose_name = 'Сертификат'
         verbose_name_plural = 'Сертификаты'

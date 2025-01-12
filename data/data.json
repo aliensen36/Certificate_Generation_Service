@@ -197,6 +197,20 @@
     }
 },
 {
+    "model": "certificates.criterion",
+    "pk": 3,
+    "fields": {
+        "name": "Математика"
+    }
+},
+{
+    "model": "certificates.criterion",
+    "pk": 4,
+    "fields": {
+        "name": "Архитектура"
+    }
+},
+{
     "model": "certificates.score",
     "pk": 1,
     "fields": {
@@ -214,6 +228,16 @@
         "certificate": "da812be8-a6c5-4640-b128-d4d73a55f44a",
         "criterion": 2,
         "score": 5.6
+    }
+},
+{
+    "model": "certificates.score",
+    "pk": 8,
+    "fields": {
+        "owner": "130a8cc9-0196-4b1b-8c88-13485a5c419e",
+        "certificate": "da812be8-a6c5-4640-b128-d4d73a55f44a",
+        "criterion": 3,
+        "score": 8.0
     }
 }
 ]
