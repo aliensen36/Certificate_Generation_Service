@@ -104,11 +104,11 @@ http://127.0.0.1:8000/admin/.
 ## Эндпойнты API
 
 Владелец сертификата  
-GET /api/owners/ — Список владельцев  
-POST /api/owners/ — Создание нового владельца  
-GET /api/owners/{id}/ — Получение информации о владельце  
-PUT /api/owners/{id}/ — Обновление информации о владельце  
-DELETE /api/owners/{id}/ — Удаление владельца  
+GET [/api/owners/](http://127.0.0.1:8000/api/owners/)  — Список владельцев  
+POST [/api/owners/](http://127.0.0.1:8000/api/owners/)   — Создание нового владельца  
+GET [/api/owners/](http://127.0.0.1:8000/api/owners/{id}/)   — Получение информации о владельце  
+PUT [/api/owners/](http://127.0.0.1:8000/api/owners/{id}/)    — Обновление информации о владельце  
+DELETE [/api/owners/](http://127.0.0.1:8000/api/owners/{id}/)    — Удаление владельца  
 
 Роли  
 GET /api/roles/ — Список ролей  
